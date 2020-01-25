@@ -109,7 +109,7 @@
                 {
                     "type": "git",
                     "url": "git://www.geeqie.org/geeqie.git",
-                    "sha256": "bd524214fb1aa6dc55dddac45110e35cf1a7c669"
+                    "sha256": "82b897ca7ada468b9100b912d5f04912e1c343de"
                 },
                 {
                     "type": "patch",
