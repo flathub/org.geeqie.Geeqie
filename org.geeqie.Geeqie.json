@@ -89,6 +89,7 @@
             ]
         },
         "shared-modules/intltool/intltool-0.51.json",
+        "shared-modules/gtk2/gtk2.json",
         {
             "name": "geeqie",
             "config-opts": [
@@ -96,7 +97,7 @@
                 "--disable-lua",
                 "--disable-gpu-accel",
                 "--disable-ffmpegthumbnailer",
-                "--enable-gtk3"
+                "--disable-gtk3"
             ],
             "cleanup": [
                 "/share/man"
