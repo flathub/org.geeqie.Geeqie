@@ -10,7 +10,9 @@
         "--share=ipc",
         "--socket=x11",
         "--socket=wayland",
-        "--filesystem=host"
+        "--filesystem=host",
+        /* Needed for colord to work */
+        "--system-talk-name=org.freedesktop.ColorManager"
     ],
     "cleanup": [
         "/include",
