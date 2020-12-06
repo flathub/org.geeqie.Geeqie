@@ -109,8 +109,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://www.geeqie.org/geeqie.git",
-                    "sha256": "82b897ca7ada468b9100b912d5f04912e1c343de"
+                    "url": "https://github.com/BestImageViewer/geeqie.git",
+                    "tag": "v1.6",
+                    "sha256": "8030a220a9f6bc12b1da57dd9d6ab7fb1b597697"
                 },
                 {
                     "type": "patch",
