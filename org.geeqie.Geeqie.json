@@ -128,10 +128,6 @@
                     "path": "geeqie-no-changelog.patch"
                 },
                 {
-                    "type": "patch",
-                    "path": "geeqie-doc.patch"
-                },
-                {
                     "type": "shell",
                     "commands": [
                         "autoreconf -vfi"
