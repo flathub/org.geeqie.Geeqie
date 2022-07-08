@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-desktop-file": "geeqie.desktop",
@@ -32,7 +32,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://exiv2.org/builds/exiv2-0.27.5-Source.tar.gz",
+                    "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.5/exiv2-0.27.5-Source.tar.gz",
                     "sha256": "35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2"
                 }
             ]
@@ -54,6 +54,7 @@
                 }
             ]
         },
+        "shared-modules/clutter/clutter.json",
         {
             "name": "libchamplain",
             "sources": [
@@ -94,7 +95,6 @@
             ]
         },
         "shared-modules/intltool/intltool-0.51.json",
-        "shared-modules/gtk2/gtk2.json",
         {
             "name": "geeqie",
             "config-opts": [
@@ -102,13 +102,14 @@
                 "--disable-lua",
                 "--disable-gpu-accel",
                 "--disable-ffmpegthumbnailer",
-                "--disable-gtk3"
+                "--enable-gtk3"
             ],
             "cleanup": [
                 "/share/man"
             ],
             "post-install": [
-                "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
+                "install -Dm644 org.geeqie.Geeqie.appdata.xml /app/share/metainfo/org.geeqie.Geeqie.appdata.xml",
+                "install -Dm644 /app/share/pixmaps/geeqie.png /app/share/icons/hicolor/48x48/apps/geeqie.png",
                 "rm -r /app/share/pixmaps"
             ],
             "sources": [
