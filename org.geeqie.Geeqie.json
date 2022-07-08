@@ -108,7 +108,7 @@
                 "/share/man"
             ],
             "post-install": [
-                 "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
+                "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
                 "rm -r /app/share/pixmaps"
             ],
             "sources": [
