@@ -108,8 +108,7 @@
                 "/share/man"
             ],
             "post-install": [
-                "install -Dm644 org.geeqie.Geeqie.appdata.xml /app/share/metainfo/org.geeqie.Geeqie.appdata.xml",
-                "install -Dm644 /app/share/pixmaps/geeqie.png /app/share/icons/hicolor/48x48/apps/geeqie.png",
+                 "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
                 "rm -r /app/share/pixmaps"
             ],
             "sources": [
