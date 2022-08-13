@@ -96,21 +96,23 @@
         },
         "shared-modules/intltool/intltool-0.51.json",
         {
+            "name": "xxd",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C src/xxd",
+                "install -Dm755 -t \"${FLATPAK_DEST}/bin\" src/xxd/xxd"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/vim/vim/archive/v9.0.0135/vim-v9.0.0135.tar.gz",
+                    "sha256": "b47690d77a8262d3115bea608fbf27f6ed122b49fc7765fb2cbf7d122d250d8f"
+                }
+            ]
+        },
+        {
             "name": "geeqie",
-            "config-opts": [
-                "--disable-lirc",
-                "--disable-lua",
-                "--disable-gpu-accel",
-                "--disable-ffmpegthumbnailer",
-                "--enable-gtk3"
-            ],
-            "cleanup": [
-                "/share/man"
-            ],
-            "post-install": [
-                "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
-                "rm -r /app/share/pixmaps"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
@@ -122,16 +124,6 @@
                         "version-query": ".tag_name | sub(\"^v\"; \"\")",
                         "url-query": ".assets[] | select(.name==\"geeqie-\" + $version + \".tar.xz\") | .browser_download_url"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "geeqie-no-changelog.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "autoreconf -vfi"
-                    ]
                 }
             ]
         }
