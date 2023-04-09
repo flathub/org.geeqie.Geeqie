@@ -5,7 +5,6 @@
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-desktop-file": "geeqie.desktop",
-    "rename-icon": "geeqie",
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
@@ -97,20 +96,25 @@
         },
         "shared-modules/intltool/intltool-0.51.json",
         {
-            "name": "geeqie",
-            "config-opts": [
-                "--disable-lirc",
-                "--disable-lua",
-                "--disable-gpu-accel",
-                "--disable-ffmpegthumbnailer",
-                "--enable-gtk3"
+            "name": "xxd",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C src/xxd",
+                "install -Dm755 -t \"${FLATPAK_DEST}/bin\" src/xxd/xxd"
             ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/vim/vim/archive/v9.0.0766/vim-v9.0.0766.tar.gz",
+                    "sha256": "be53fd9e943ee0b2edfa82166da0417c833ec7077f0f49cd76490e424a176062"
+                }
+            ]
+        },
+        {
+            "name": "geeqie",
+            "buildsystem": "meson",
             "cleanup": [
                 "/share/man"
-            ],
-            "post-install": [
-                "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
-                "rm -r /app/share/pixmaps"
             ],
             "sources": [
                 {
@@ -123,16 +127,6 @@
                         "version-query": ".tag_name | sub(\"^v\"; \"\")",
                         "url-query": ".assets[] | select(.name==\"geeqie-\" + $version + \".tar.xz\") | .browser_download_url"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "geeqie-no-changelog.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "autoreconf -vfi"
-                    ]
                 }
             ]
         }
