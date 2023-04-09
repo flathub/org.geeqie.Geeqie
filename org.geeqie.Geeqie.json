@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-desktop-file": "geeqie.desktop",
@@ -55,6 +55,7 @@
             ]
         },
         "shared-modules/clutter/clutter.json",
+        "shared-modules/libsoup/libsoup-2.4.json",
         {
             "name": "libchamplain",
             "sources": [
