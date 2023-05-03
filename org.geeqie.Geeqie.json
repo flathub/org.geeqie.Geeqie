@@ -121,6 +121,9 @@
                         "type": "json",
                         "url": "https://api.github.com/repos/BestImageViewer/geeqie/releases/latest",
                         "version-query": ".tag_name | sub(\"^v\"; \"\")",
+                        "versions": {
+                            "!=": "2.0"
+                        },
                         "url-query": ".assets[] | select(.name==\"geeqie-\" + $version + \".tar.xz\") | .browser_download_url"
                     }
                 },
