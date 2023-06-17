@@ -115,8 +115,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.3/geeqie-1.7.3.tar.xz",
-                    "sha256": "25b1f71cf91bd9a96f399d2a9e70507e54bb377a56e64d89521c0f7a9ce5dd38",
+                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz",
+                    "sha256": "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/BestImageViewer/geeqie/releases/latest",
