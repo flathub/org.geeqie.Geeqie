@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-desktop-file": "geeqie.desktop",
@@ -54,69 +54,30 @@
                 }
             ]
         },
-        "shared-modules/clutter/clutter.json",
-        "shared-modules/libsoup/libsoup-2.4.json",
-        {
-            "name": "libchamplain",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.16.tar.xz",
-                    "sha256": "4a7e31cf7889669aebf04631543af64435edd989685159b804911c6005db908d"
-                }
-            ]
-        },
-        {
-            "name": "libwmf",
-            "config-opts": [
-                "--with-freetype=/usr"
-            ],
-            "cleanup": [
-                "/include",
-                "/share/doc",
-                "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/caolanm/libwmf.git",
-                    "tag": "v0.2.12",
-                    "commit": "5b7af9cf44c688770f174533dbe14c8953ec39cd"
-                },
-                {
-                    "type": "patch",
-                    "path": "libwmf-autoheader.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "autoreconf -vfi"
-                    ]
-                }
-            ]
-        },
         "shared-modules/intltool/intltool-0.51.json",
         {
-            "name": "geeqie",
-            "config-opts": [
-                "--disable-lirc",
-                "--disable-lua",
-                "--disable-gpu-accel",
-                "--disable-ffmpegthumbnailer",
-                "--enable-gtk3"
-            ],
-            "cleanup": [
-                "/share/man"
-            ],
-            "post-install": [
-                "install -Dm644 src/icons/svg/gqview_icon.svg /app/share/icons/hicolor/scalable/apps/geeqie.svg",
-                "rm -r /app/share/pixmaps"
+            "name": "xxd",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -C src/xxd",
+                "install -Dm755 -t \"${FLATPAK_DEST}/bin\" src/xxd/xxd"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v1.7.3/geeqie-1.7.3.tar.xz",
-                    "sha256": "25b1f71cf91bd9a96f399d2a9e70507e54bb377a56e64d89521c0f7a9ce5dd38",
+                    "url": "https://github.com/vim/vim/archive/v9.0.0135/vim-v9.0.0135.tar.gz",
+                    "sha256": "b47690d77a8262d3115bea608fbf27f6ed122b49fc7765fb2cbf7d122d250d8f"
+                }
+            ]
+        },
+        {
+            "name": "geeqie",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz",
+                    "sha256": "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/BestImageViewer/geeqie/releases/latest",
@@ -126,16 +87,6 @@
                         },
                         "url-query": ".assets[] | select(.name==\"geeqie-\" + $version + \".tar.xz\") | .browser_download_url"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "geeqie-no-changelog.patch"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "autoreconf -vfi"
-                    ]
                 }
             ]
         }
