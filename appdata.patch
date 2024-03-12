@@ -1,0 +1,11 @@
+diff --git a/org.geeqie.Geeqie.appdata.xml.in b/org.geeqie.Geeqie.appdata.xml.in
+index 56225274..33c2838d 100644
+--- a/org.geeqie.Geeqie.appdata.xml.in
++++ b/org.geeqie.Geeqie.appdata.xml.in
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<component>
++<component type="desktop">
+   <id>org.geeqie.Geeqie</id>
+   <metadata_license>CC-BY-SA-4.0</metadata_license>
+   <content_rating type="oars-1.1" />
