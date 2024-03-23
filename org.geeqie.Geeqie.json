@@ -86,10 +86,6 @@
                         },
                         "url-query": ".assets[] | select(.name==\"geeqie-\" + $version + \".tar.xz\") | .browser_download_url"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "appdata.patch"
                 }
             ]
         }
