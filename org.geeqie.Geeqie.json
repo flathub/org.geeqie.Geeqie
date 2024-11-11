@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-icon": "geeqie",
