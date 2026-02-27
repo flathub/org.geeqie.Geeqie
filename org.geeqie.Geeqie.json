@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-icon": "geeqie",
@@ -22,7 +22,8 @@
             "name": "exiv2",
             "buildsystem": "cmake-ninja",
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "cleanup": [
                 "/bin",
@@ -40,6 +41,9 @@
         {
             "name": "xxd",
             "buildsystem": "simple",
+            "build-options": {
+                "cflags": "-std=gnu18"
+            },
             "build-commands": [
                 "make -C src/xxd",
                 "install -Dm755 -t \"${FLATPAK_DEST}/bin\" src/xxd/xxd"
