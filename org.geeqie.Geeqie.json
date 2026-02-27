@@ -13,7 +13,11 @@
     ],
     "cleanup": [
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
+        "/share/bash-completion",
+        "/share/doc",
+        "/share/man",
         "*.a",
         "*.la"
     ],
@@ -26,8 +30,7 @@
                 "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "cleanup": [
-                "/bin",
-                "/share/man"
+                "/bin"
             ],
             "sources": [
                 {
