@@ -1,7 +1,7 @@
 {
     "app-id": "org.geeqie.Geeqie",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "51",
     "sdk": "org.gnome.Sdk",
     "command": "geeqie",
     "rename-icon": "geeqie",
@@ -65,8 +65,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v3.1/geeqie-3.1.tar.xz",
-                    "sha256": "ca550826e30fee9d6ccfc621ddd0e4c430d440f51cdfcbebe623cedfe64fd805",
+                    "url": "https://github.com/BestImageViewer/geeqie/releases/download/v3.2/geeqie-3.2.tar.xz",
+                    "sha256": "ef10cdf72d8ab739286cc26fa3ff0a3535633ceea75c4cbdea39916bf9af2e0f",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/BestImageViewer/geeqie/releases/latest",
